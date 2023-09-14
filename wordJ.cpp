@@ -27,16 +27,16 @@ int main(){
     cout << "enter \"hint\" to get a hint. \n";
     cout << "enter \"quit\" to get a quit. \n";
 
-
+    //generating random numbers
     srand(static_cast<unsigned int>(time(0)));
     int random = rand();
     int rand_index = (random % 10);
-
+    //random word is chosen from the array
     random_word = word_array[rand_index][0];
     hint = word_array[rand_index][1];
 
     jumble = random_word;
-
+    //creating the jumble
     for(int i = 0; i < jumble.size(); i++){
         int index1 = (rand() % jumble.size());
         int index2 = (rand() % jumble.size());
@@ -46,7 +46,7 @@ int main(){
     }
 
     cout <<"guess the word:"<< jumble <<endl;
-
+    //game loop
     while(!success){
         cout << "your answer: ";
         cin >> guess;
